@@ -11,9 +11,8 @@ swedish_population = pd.read_csv(file_path)
 
 print(swedish_population)
 
-'''plt.plot(swedish_population['x'], swedish_population['y'])
+plt.plot(swedish_population['x'], swedish_population['y'])
 plt.xlabel('Year')
 plt.ylabel('Ratio')
 plt.title('Dependency ratio of Sweden from 1860 to 2022')
-plt.show()'''
-
+plt.show()
