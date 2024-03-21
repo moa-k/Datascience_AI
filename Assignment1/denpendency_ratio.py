@@ -15,15 +15,34 @@ swe_pop = pd.read_csv(file_path) # Swedish population
 all_ages = swe_pop["age"]
 all_ages = all_ages.str.replace('+', '') # Remove 110+ to 110
 all_ages = all_ages.astype(str).astype(int) # From object to int type
-print( all_ages.tail) 
+#print( all_ages.tail) 
 
 #print( all_ages.head() )
-print('Dimensions:',all_ages.ndim, 'Shape:', all_ages.shape, 'Size:', all_ages.size)
-print('Type:', all_ages.dtypes )
+#print('Dimensions:',all_ages.ndim, 'Shape:', all_ages.shape, 'Size:', all_ages.size)
+#print('Type:', all_ages.dtypes )
 
 children = swe_pop[all_ages < 15] 
 lab_for = swe_pop[(all_ages > 14) & (all_ages < 65)] # Labor force
 elderly = swe_pop[all_ages > 64 ]
+
+children = children.iloc[:, 2:]
+lab_for = lab_for.iloc[:, 2:]
+elderly = elderly.iloc[:, 2:]
+
+children_tot = children.sum()
+lab_for_tot = lab_for.sum()
+elderly_tot = elderly.sum()
+
+print(children.head())
+
+#print(lab_for.head())
+
+print(children_tot)
+print('Dimensions:',children.ndim, 'Shape:', children.shape, 'Size:', children.size)
+#print('Type:', children.dtypes )
+
+
+#print(swe_pop.groupby("sex")["1860"].count())
 
 
 
