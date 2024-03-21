@@ -3,35 +3,39 @@ import pandas as pd
 import matplotlib as plt
 import os
 
+# Locate file in directory
 current_directory = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(current_directory, 'swedish_population_by_year_and_sex_1860-2022.csv')  
 
-# Read CSV file
-swe_pop = pd.read_csv(file_path) # Swedish population
+# Read CSV file of swedish population
+swe_pop = pd.read_csv(file_path) 
 #print('Dimensions:',swe_pop.ndim, 'Shape:', swe_pop.shape, 'Size:', swe_pop.size)
 # print('Type:', swe_pop.dtypes )
 
-
+# Remove 110+ to 110 and change type object to type int 
 all_ages = swe_pop["age"]
-all_ages = all_ages.str.replace('+', '') # Remove 110+ to 110
-all_ages = all_ages.astype(str).astype(int) # From object to int type
+all_ages = all_ages.str.replace('+', '') 
+all_ages = all_ages.astype(str).astype(int) 
 #print( all_ages.tail) 
 
-#print( all_ages.head() )
-#print('Dimensions:',all_ages.ndim, 'Shape:', all_ages.shape, 'Size:', all_ages.size)
-#print('Type:', all_ages.dtypes )
-
+# Sort the population
 children = swe_pop[all_ages < 15] 
 lab_for = swe_pop[(all_ages > 14) & (all_ages < 65)] # Labor force
 elderly = swe_pop[all_ages > 64 ]
 
-children = children.iloc[:, 2:]
+# Remove age ang sex
+children = children.iloc[:, 2:]  
 lab_for = lab_for.iloc[:, 2:]
 elderly = elderly.iloc[:, 2:]
 
+# Sum of all ages each year
 children_tot = children.sum()
 lab_for_tot = lab_for.sum()
 elderly_tot = elderly.sum()
+
+
+
+
 
 print(children.head())
 
