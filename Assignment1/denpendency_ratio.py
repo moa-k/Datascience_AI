@@ -9,14 +9,12 @@ file_path = os.path.join(current_directory, 'swedish_population_by_year_and_sex_
 
 # Read CSV file of swedish population
 swe_pop = pd.read_csv(file_path) 
-#print('Dimensions:',swe_pop.ndim, 'Shape:', swe_pop.shape, 'Size:', swe_pop.size)
-# print('Type:', swe_pop.dtypes )
 
 # Remove 110+ to 110 and change type object to type int 
 all_ages = swe_pop["age"]
 all_ages = all_ages.str.replace('+', '') 
 all_ages = all_ages.astype(str).astype(int) 
-#print( all_ages.tail) 
+
 
 # Sort the population
 children = swe_pop[all_ages < 15] 
@@ -41,14 +39,15 @@ print(children.head())
 
 #print(lab_for.head())
 
-print(children_tot)
+
 print('Dimensions:',children.ndim, 'Shape:', children.shape, 'Size:', children.size)
 #print('Type:', children.dtypes )
 
 
 #print(swe_pop.groupby("sex")["1860"].count())
-
-
+#print('Dimensions:',swe_pop.ndim, 'Shape:', swe_pop.shape, 'Size:', swe_pop.size)
+# print('Type:', swe_pop.dtypes )
+#print( all_ages.tail) 
 
 
 
