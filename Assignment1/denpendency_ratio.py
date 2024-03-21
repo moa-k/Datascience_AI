@@ -19,13 +19,13 @@ print( all_ages.tail)
 
 #print( all_ages.head() )
 print('Dimensions:',all_ages.ndim, 'Shape:', all_ages.shape, 'Size:', all_ages.size)
+print('Type:', all_ages.dtypes )
 
-'''
 children = swe_pop[all_ages < 15] 
-lab_for = swe_pop[all_ages > 14 & all_ages < 65] # Labor force
+lab_for = swe_pop[(all_ages > 14) & (all_ages < 65)] # Labor force
 elderly = swe_pop[all_ages > 64 ]
 
-'''
+
 
 
 
