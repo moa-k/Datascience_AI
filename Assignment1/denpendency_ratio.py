@@ -7,7 +7,7 @@ import os
 current_directory = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(current_directory, 'swedish_population_by_year_and_sex_1860-2022.csv')  
 
-# Read CSV file of swedish population
+# Read CSV file of Swedish population
 swe_pop = pd.read_csv(file_path) 
 
 # Remove 110+ to 110 and change type object to type int 
@@ -20,7 +20,7 @@ children = swe_pop[all_ages < 15]
 lab_for = swe_pop[(all_ages > 14) & (all_ages < 65)] # Labor force
 elderly = swe_pop[all_ages > 64 ]
 
-# Remove age ang sex
+# Remove age and sex
 children = children.iloc[:, 2:]  
 lab_for = lab_for.iloc[:, 2:]
 elderly = elderly.iloc[:, 2:]
@@ -40,7 +40,7 @@ children_frac = 100 * (children_tot / swe_pop_tot)
 elderly_frac = 100 * (elderly_tot / swe_pop_tot)
 depen_frac = 100 * ((children_tot + elderly_tot) / swe_pop_tot)
 
-# Timeline
+# Timeline to plot x-axis
 years = np.arange(1860, 2023)
 
 # Plot 
@@ -80,5 +80,5 @@ plt.show()
 #print(lab_for.head())
 #print(swe_pop.groupby("sex")["1860"].count())
 #print('Dimensions:',swe_pop.ndim, 'Shape:', swe_pop.shape, 'Size:', swe_pop.size)
-# print('Type:', swe_pop.dtypes )
+#print('Type:', swe_pop.dtypes )
 #print( all_ages.tail) 
