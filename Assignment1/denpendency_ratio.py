@@ -59,6 +59,13 @@ plt.xlabel('Timeline [years]')
 plt.ylabel('Fraction of population [percent]')
 plt.title('Fraction of children, elderly och total dependent population of the total Swedish population 1860-2022')
 
+
+# 1. Ser plottarna bra ut?
+# 2. Har vi tänkt rätt på andra uppgiften?
+# 3. Hur får man till labels?
+# 4. Hur får man plot titeln på två rader?
+# 5. Är % rätt enhet?
+
 '''
 plt.figure(2)
 plt.plot(years, children_tot, label='children')
