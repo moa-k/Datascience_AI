@@ -60,7 +60,7 @@ plt.plot(years, depen_frac)
 plt.xlabel('Timeline [years]')
 plt.ylabel('Fraction of population [percent]')
 plt.title('Fraction of children, elderly och total dependent population \n of the total Swedish population 1860-2022')
-plt.legend(["Children", "Elderly", "Total dependent population"])
+plt.legend(["Children", "Elderly", "Total dependent \n population"])
 
 plt.show()
 
